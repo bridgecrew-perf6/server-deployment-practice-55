@@ -4,4 +4,6 @@ require('dotenv').config();
 
 const server = require('./server');
 
-server.start(3001);
+const PORT = process.env.PORT || 3000;
+
+server.start(PORT);
