@@ -4,7 +4,7 @@
 require('dotenv').config();
 const express = require('express'); // server
 const app = express();
-// const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 // local files
 const notFoundHandler = require('./handlers/404');
@@ -14,7 +14,7 @@ const errorHandler = require('./handlers/500');
 app.get('/', renderHome);
 app.get('/data', renderData);
 app.get('/bad', (req, res, next) => {
-  // anytime you put anything inside of the next(), it will thow an error
+  // anytime you put anything inside of the next(), it will throw an error
   next('you messed up');
 })
 app.use('*', notFoundHandler);
@@ -39,8 +39,8 @@ function renderData(req, res, next){
 
 
 // turning server on
-function start(port) {
-  app.listen(port, () => console.log(`server is listening on ${port}`));
+function start(PORT) {
+  app.listen(PORT, () => console.log(`server is listening on ${port}`));
 }
 
 module.exports = {
