@@ -14,7 +14,7 @@ const errorHandler = require('./handlers/500');
 app.get('/', renderHome);
 app.get('/data', renderData);
 app.get('/bad', (req, res, next) => {
-  // anytime you put anything inside of the next(), it will thow an error
+  // anytime you put anything inside of the next(), it will throw an error
   next('you messed up');
 })
 app.use('*', notFoundHandler);
