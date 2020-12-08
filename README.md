@@ -1,2 +1,4 @@
-# server-deployment-practice
-401lab01
+# Server Deployment Practice
+
+## Author
+- Simon Panek
